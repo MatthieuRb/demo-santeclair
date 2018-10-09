@@ -4,11 +4,14 @@ import com.matthieurb.demosanteclair.domain.Patient;
 import com.matthieurb.demosanteclair.model.PatientDTO;
 import javax.annotation.Generated;
 
+import org.springframework.stereotype.Component;
+
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
     date = "2018-10-08T21:59:10+0200",
     comments = "version: 1.2.0.Final, compiler: javac, environment: Java 1.8.0_181 (Oracle Corporation)"
 )
+@Component
 public class PatientMapperImpl implements PatientMapper {
 
     @Override
