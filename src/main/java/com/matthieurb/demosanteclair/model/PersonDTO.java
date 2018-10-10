@@ -1,7 +1,7 @@
 package com.matthieurb.demosanteclair.model;
 
 public abstract class PersonDTO extends BaseEntityDTO{
-	
+
 	private String firstName;
 	private String lastName;
 	
