@@ -36,12 +36,15 @@ public class DoctorController {
     public DoctorDTO getDoctorById(@PathVariable Long id){
         return doctorService.getDoctorById(id);
     }
+<<<<<<< HEAD
     
     @GetMapping({"/specialty/{specialtyName}"})
     @ResponseStatus(HttpStatus.OK)
     public DoctorListDTO getDoctorsBySpecialtyTitle(@PathVariable String specialtyName){
         return new DoctorListDTO(doctorService.getDoctorsBySpecialtyTitle(specialtyName));
     }
+=======
+>>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
 	
 	@PostMapping
     @ResponseStatus(HttpStatus.CREATED)

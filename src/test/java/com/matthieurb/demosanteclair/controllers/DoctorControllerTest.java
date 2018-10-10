@@ -24,7 +24,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.matthieurb.demosanteclair.model.DoctorDTO;
+<<<<<<< HEAD
 import com.matthieurb.demosanteclair.model.SpecialtyDTO;
+=======
+>>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
 import com.matthieurb.demosanteclair.services.DoctorService;
 import com.matthieurb.demosanteclair.services.ResourceNotFoundException;
 
@@ -43,7 +46,10 @@ public class DoctorControllerTest extends AbstractRestControllerTest{
 
     @Before
     public void setUp() throws Exception {
+<<<<<<< HEAD
     	
+=======
+>>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
         MockitoAnnotations.initMocks(this);
 
         mockMvc = MockMvcBuilders.standaloneSetup(doctorController)
@@ -53,8 +59,12 @@ public class DoctorControllerTest extends AbstractRestControllerTest{
     }
 
     @Test
+<<<<<<< HEAD
     public void testListDoctors() throws Exception {
     	
+=======
+    public void testListCategories() throws Exception {
+>>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
         DoctorDTO doctor1 = new DoctorDTO();
         doctor1.setId(1l);
         doctor1.setFirstName("Paul");
@@ -93,6 +103,7 @@ public class DoctorControllerTest extends AbstractRestControllerTest{
     }
     
     @Test
+<<<<<<< HEAD
     public void getDoctorsBySpecialtyTitle() throws Exception{
     	
     	SpecialtyDTO specialty1 = new SpecialtyDTO();
@@ -116,6 +127,8 @@ public class DoctorControllerTest extends AbstractRestControllerTest{
     }
     
     @Test
+=======
+>>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
     public void createNewDoctor() throws Exception {
     	
         DoctorDTO doctor = new DoctorDTO();
@@ -131,7 +144,13 @@ public class DoctorControllerTest extends AbstractRestControllerTest{
         mockMvc.perform(post("/api/doctors")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(doctor)))
+<<<<<<< HEAD
                 .andExpect(status().isCreated());
+=======
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.firstName", equalTo("Paul")))
+                .andExpect(jsonPath("$.lastName", equalTo("Williams")));
+>>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
     }
 
     @Test

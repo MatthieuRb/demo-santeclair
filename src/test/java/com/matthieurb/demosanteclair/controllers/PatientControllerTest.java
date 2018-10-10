@@ -50,7 +50,11 @@ public class PatientControllerTest extends AbstractRestControllerTest {
     }
 
     @Test
+<<<<<<< HEAD
     public void testListPatients() throws Exception {
+=======
+    public void testListCategories() throws Exception {
+>>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
         PatientDTO patient1 = new PatientDTO();
         patient1.setId(1l);
         patient1.setFirstName("Paul");
@@ -104,7 +108,13 @@ public class PatientControllerTest extends AbstractRestControllerTest {
         mockMvc.perform(post("/api/patients")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(asJsonString(patient)))
+<<<<<<< HEAD
                 .andExpect(status().isCreated());
+=======
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.firstName", equalTo("Paul")))
+                .andExpect(jsonPath("$.lastName", equalTo("Williams")));
+>>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
     }
 
     @Test
