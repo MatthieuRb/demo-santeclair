@@ -53,19 +53,9 @@ public class PatientServiceImpl implements PatientService {
     	
         Patient savedPatient = patientRepository.save(patient);
 
-<<<<<<< HEAD
         PatientDTO returnDto = patientMapper.patientToPatientDTO(savedPatient);
 
         return returnDto;
-=======
-        PatientDTO patientDto = patientMapper.patientToPatientDTO(savedPatient);
-        
-        System.out.println(patientDto.getId());
-        System.out.println(patientDto.getFirstName());
-        System.out.println(patientDto.getLastName());
-
-        return patientDto;
->>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
     }
 
     @Override

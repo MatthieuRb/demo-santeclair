@@ -15,10 +15,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import com.matthieurb.demosanteclair.domain.Doctor;
-<<<<<<< HEAD
 import com.matthieurb.demosanteclair.domain.Specialty;
-=======
->>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
 import com.matthieurb.demosanteclair.mapper.DoctorMapper;
 import com.matthieurb.demosanteclair.model.DoctorDTO;
 import com.matthieurb.demosanteclair.repositories.DoctorRepository;
@@ -63,7 +60,6 @@ public class DoctorServiceImplTest {
     }
     
     @Test
-<<<<<<< HEAD
     public void getDoctorsBySpecialtyTitle() {
     	
     	Specialty specialty1 = new Specialty();
@@ -94,8 +90,6 @@ public class DoctorServiceImplTest {
 	}
     
     @Test
-=======
->>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
     public void getDoctorById() {
     	
     	Doctor doctor1 = new Doctor();

@@ -18,26 +18,19 @@ public class DoctorServiceImpl implements DoctorService {
 	private final DoctorRepository doctorRepository;
 
 	public DoctorServiceImpl(DoctorMapper doctorMapper, DoctorRepository doctorRepository) {
-<<<<<<< HEAD
-		
-=======
->>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
+	
 		this.doctorMapper = doctorMapper;
 		this.doctorRepository = doctorRepository;
 	}
 
 	@Override
 	public List<DoctorDTO> getAllDoctors() {
-<<<<<<< HEAD
-		
-=======
->>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
+
 		return doctorRepository.findAll()
                 .stream()
                 .map(doctorMapper::doctorToDoctorDTO)
                 .collect(Collectors.toList());
 	}
-<<<<<<< HEAD
 	
 	@Override
 	public List<DoctorDTO> getDoctorsBySpecialtyTitle(String specialty) {
@@ -48,15 +41,9 @@ public class DoctorServiceImpl implements DoctorService {
                 .filter(doctorDTO -> specialty.equals(doctorDTO.getSpecialty().getTitle()))
                 .collect(Collectors.toList());
 	}
-
+	
 	@Override
 	public DoctorDTO getDoctorById(Long id) {
-		
-=======
-
-	@Override
-	public DoctorDTO getDoctorById(Long id) {
->>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
 		Optional<Doctor> optional =  doctorRepository.findById(id);
 		if(optional.isPresent()) {
 			return doctorMapper.doctorToDoctorDTO(optional.get());
@@ -72,10 +59,7 @@ public class DoctorServiceImpl implements DoctorService {
     }
 
     private DoctorDTO saveAndReturnDTO(Doctor doctor) {
-<<<<<<< HEAD
     	
-=======
->>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
         Doctor savedDoctor = doctorRepository.save(doctor);
 
         DoctorDTO returnDto = doctorMapper.doctorToDoctorDTO(savedDoctor);
@@ -85,10 +69,7 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public DoctorDTO saveDoctorByDTO(Long id, DoctorDTO doctorDTO) {
-<<<<<<< HEAD
     	
-=======
->>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
         Doctor doctor = doctorMapper.doctorDTOtoDoctor(doctorDTO);
         doctor.setId(id);
 
@@ -97,10 +78,7 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public void deleteDoctorById(Long id) {
-<<<<<<< HEAD
     	
-=======
->>>>>>> 156ad710accfa772b9d2d6b775dfd7bcfe0ae1a1
         doctorRepository.deleteById(id);
     }
 
