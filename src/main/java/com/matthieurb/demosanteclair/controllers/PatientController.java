@@ -15,6 +15,9 @@ import com.matthieurb.demosanteclair.model.PatientDTO;
 import com.matthieurb.demosanteclair.model.PatientListDTO;
 import com.matthieurb.demosanteclair.services.PatientService;
 
+import io.swagger.annotations.Api;
+
+@Api(description="Controlleur pour la gestion des patients")
 @RestController
 @RequestMapping("/api/patients")
 public class PatientController {

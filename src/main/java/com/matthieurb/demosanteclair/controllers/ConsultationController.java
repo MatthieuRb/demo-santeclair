@@ -15,6 +15,9 @@ import com.matthieurb.demosanteclair.model.ConsultationDTO;
 import com.matthieurb.demosanteclair.model.ConsultationListDTO;
 import com.matthieurb.demosanteclair.services.ConsultationService;
 
+import io.swagger.annotations.Api;
+
+@Api(description="Controlleur pour la gestion des consultations")
 @RestController
 @RequestMapping("/api/consultations")
 public class ConsultationController {

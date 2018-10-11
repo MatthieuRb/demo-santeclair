@@ -15,6 +15,9 @@ import com.matthieurb.demosanteclair.model.SpecialtyDTO;
 import com.matthieurb.demosanteclair.model.SpecialtyListDTO;
 import com.matthieurb.demosanteclair.services.SpecialtyService;
 
+import io.swagger.annotations.Api;
+
+@Api(description="Controlleur pour la gestion des spécialités")
 @RestController
 @RequestMapping("/api/specialties")
 public class SpecialtyController {
