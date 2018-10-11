@@ -16,6 +16,7 @@ import com.matthieurb.demosanteclair.model.ConsultationListDTO;
 import com.matthieurb.demosanteclair.services.ConsultationService;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 @Api(description="Controlleur pour la gestion des consultations")
 @RestController
@@ -40,6 +41,8 @@ public class ConsultationController {
         return consultationService.getConsultationById(id);
     }
 	
+    @ApiOperation(value = "Cette opération va créer une nouvelle consultation", notes = "Attention, chaque consultation dure 15 minutes, "
+    		+ "il faut donc respecter ce délai entre chaque rendez-vous")
 	@PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ConsultationDTO createNewConsultation(@RequestBody ConsultationDTO consultationDTO){
