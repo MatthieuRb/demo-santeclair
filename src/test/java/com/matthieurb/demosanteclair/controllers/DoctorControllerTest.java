@@ -120,11 +120,7 @@ public class DoctorControllerTest extends AbstractRestControllerTest{
         doctor.setFirstName("Paul");
         doctor.setLastName("Williams");
 
-        DoctorDTO doctorDTO = new DoctorDTO();
-        doctorDTO.setFirstName(doctor.getFirstName());
-        doctorDTO.setLastName(doctor.getLastName());
-
-        when(doctorService.createNewDoctor(doctor)).thenReturn(doctorDTO);
+        when(doctorService.createNewDoctor(doctor)).thenReturn(doctor);
 
         mockMvc.perform(post("/api/doctors")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -139,11 +135,7 @@ public class DoctorControllerTest extends AbstractRestControllerTest{
         doctor.setFirstName("Paul");
         doctor.setLastName("Williams");
 
-        DoctorDTO returnDTO = new DoctorDTO();
-        returnDTO.setFirstName(doctor.getFirstName());
-        returnDTO.setLastName(doctor.getLastName());
-
-        when(doctorService.saveDoctorByDTO(anyLong(), any(DoctorDTO.class))).thenReturn(returnDTO);
+        when(doctorService.saveDoctorByDTO(anyLong(), any(DoctorDTO.class))).thenReturn(doctor);
 
         mockMvc.perform(put("/api/doctors/1")
                 .contentType(MediaType.APPLICATION_JSON)

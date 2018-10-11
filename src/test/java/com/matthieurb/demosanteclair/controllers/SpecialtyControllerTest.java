@@ -93,10 +93,7 @@ public class SpecialtyControllerTest extends AbstractRestControllerTest{
         SpecialtyDTO specialty = new SpecialtyDTO();
         specialty.setTitle("Dentiste");
 
-        SpecialtyDTO specialtyDTO = new SpecialtyDTO();
-        specialtyDTO.setTitle(specialty.getTitle());
-
-        when(specialtyService.createNewSpecialty(specialty)).thenReturn(specialtyDTO);
+        when(specialtyService.createNewSpecialty(specialty)).thenReturn(specialty);
 
         mockMvc.perform(post("/api/specialties")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -110,10 +107,7 @@ public class SpecialtyControllerTest extends AbstractRestControllerTest{
         SpecialtyDTO specialty = new SpecialtyDTO();
         specialty.setTitle("Dentiste");
 
-        SpecialtyDTO returnDTO = new SpecialtyDTO();
-        returnDTO.setTitle(specialty.getTitle());
-
-        when(specialtyService.saveSpecialtyByDTO(anyLong(), any(SpecialtyDTO.class))).thenReturn(returnDTO);
+        when(specialtyService.saveSpecialtyByDTO(anyLong(), any(SpecialtyDTO.class))).thenReturn(specialty);
 
         mockMvc.perform(put("/api/specialties/1")
                 .contentType(MediaType.APPLICATION_JSON)
