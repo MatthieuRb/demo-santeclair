@@ -69,7 +69,7 @@ public class ConsultationServiceImpl implements ConsultationService {
     	if(consultationRepository.findAll()
                 .stream()
                 .filter(consultationStream -> consultationStream.getDoctor().getId().equals(consultation.getDoctor().getId()) 
-                		|| consultationStream.getPatient().equals(consultation.getPatient()))
+                		|| consultationStream.getPatient().getId().equals(consultation.getPatient().getId()))
                 .filter(consultationStream -> checkDates(consultationStream.getDate(), consultation.getDate()))
                 .collect(Collectors.toList())
                 .size() != 0) {
