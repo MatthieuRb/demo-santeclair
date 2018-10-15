@@ -68,23 +68,14 @@ public class ConsultationServiceImpl implements ConsultationService {
     	
     	if(consultationRepository.findAll()
                 .stream()
-                .filter(consultationStream -> consultationStream.getDoctor().getId().equals(consultation.getDoctor().getId()))
+                .filter(consultationStream -> consultationStream.getDoctor().getId().equals(consultation.getDoctor().getId()) 
+                		|| consultationStream.getPatient().equals(consultation.getPatient()))
                 .filter(consultationStream -> checkDates(consultationStream.getDate(), consultation.getDate()))
                 .collect(Collectors.toList())
                 .size() != 0) {
     		return false;
     	}
-    	if(consultationRepository.findAll()
-                .stream()
-                .map(consultationMapper::consultationToConsultationDTO)
-                .filter(consultationStream -> consultationStream.getPatient().equals(consultation.getPatient()))
-                .filter(consultationStream -> checkDates(consultationStream.getDate(), consultation.getDate()))
-                .collect(Collectors.toList())
-                .size() != 0) {
-    		return false;
-    	}
-    	return true;
-                
+    	return true;         
     }
     
     //Retourne true si les deux dates ne respectent pas un écart de 15 minutes
